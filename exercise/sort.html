@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        ul{
+            display:block;
+            padding:0;
+            margin:100px;;
+            list-style:none;
+            /*position:fixed;*/
+            /*width:100px;*/
+            /*height:100px;*/
+            border:1px solid #aaa;
+        }
+        ul>li{
+            display:block;
+            width:50px;
+            height:50px;
+            border:1px solid #000;
+            cursor: move;
+            position:absolute;
+            left:0;
+        }
+        ul>li:nth-child(1){
+            top:0;
+        }
+        ul>li:nth-child(2){
+            top:50px;
+        }
+        ul>li:nth-child(3){
+            top:100px;
+        }
+        ul>li:nth-child(4){
+            top:150px;
+        }
+        ul>li:nth-child(5){
+            top:200px;
+        }
+        #pop{
+            width:50px;
+            height:50px;
+            background:red;
+            cursor: move;
+            position:absolute;
+            left:0;
+            top:0;
+        }
+    </style>
+</head>
+<body>
+<ul id="ul">
+    <li id="sort1">a</li>
+    <li id="sort2">b</li>
+    <li id="sort3">c</li>
+    <li id="sort4">d</li>
+    <li id="sort5">e</li>
+</ul>
+<!--<div id="pop"></div>-->
+<script src="../js/jquery-1.11.3.js"></script>
+<script>
+//    var offsetY;
+//    var canMove=false;
+//    var pop=$("#pop");
+//    $("div").mousedown(e=>{
+//        canMove=true;
+//        offsetY=$(e.offsetY);
+//    });
+//    $(document.body).mousemove(e=>{
+//        if(canMove){
+//            var top=$(e.clientY)-offsetY;
+//            if(top<0){
+//                top=0;
+//            }else if(top>window.innerHeight-50){
+//                top=window.innerHeight-100;
+//            }
+//            $("div").css("top",top);
+//        }
+//    })
+//    var pop=document.getElementById("pop");
+    var offsetX,offsetY;
+    var canMove=false;//标识是否可移动
+var move1,move2;
+    ul.onmousedown=function(e){
+        if(e.target.nodeName=="LI"){
+            canMove=true;
+            offsetY= e.offsetY;
+            var move1= getComputedStyle(e.target).top;
+
+        }
+        document.body.onmousemove=function(e){
+            if(e.target.nodeName=="LI"){
+                if(canMove){
+                    var top= e.clientY-offsetY;
+                    var move2= e.target.style.top;
+//                if(top<0){top=0}
+//                else if(top>window.innerHeight-100){top=window.innerHeight-100;}
+                    e.target.style.cssText="top:"+top+"px;z-index:1;";
+                    if(move2-move1>50){
+                        e.target.nextElementsibling.style.top=e.target.nextElementsibling.style.top.slice(0,-2)
+                    }
+                }
+            }
+        };
+    };
+
+    //结束拖拽
+    // 若不加pop.onmouseout会有bug，即鼠标快速移动，鼠标抬起动作不在图片中结束，移动也不结束
+    ul.onmouseup=ul.onmouseout=function(){canMove=false; };
+
+</script>
+</body>
+</html>

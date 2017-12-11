@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="css/game-register.css"/>
+</head>
+<body>
+    <!--页面头部-->
+    <header id="header">
+        <div class="middle-body">
+            <!--左边logo及标题-->
+            <ul id="logo">
+                <li>
+                    <a href="index.html">
+                        <img src="images/logo.png"/>
+                    </a>
+                </li>
+                <li>
+                    <p>通行证 - 手机注册</p>
+                </li>
+            </ul>
+            <!--右边说明-->
+            <span>
+                <i class="title"></i>
+                太平洋网络通行证，畅游太平洋网络旗下所有网站
+            </span>
+        </div>
+    </header>
+    <!--页面主体-->
+    <section id="main" class="middle-body">
+        <!--左侧注册表单-->
+        <form id="form1">
+            <ul>
+                <li>
+                    <span>手机</span>
+                    <input type="text" name="phone"/>
+                    <div class="vali_info"><i class="border"></i>请填写有效的手机号码</div>
+                    <p class="vali_info"><i></i>手机号是必填项</p>
+                </li>
+                <li>
+                    <span></span>
+                    没有手机号？试试使用<a href="#" class="blue">邮箱注册</a>吧
+                </li>
+                <li>
+                    <span>用户名</span>
+                    <input type="text" name="userName"/>
+                    <div class="vali_info"><i class="border"></i>6-16个字符(字母、数字、下划线)或3-8个中文</div>
+                    <p class="vali_info"><i></i>用户名是必填项</p>
+                </li>
+                <li>
+                    <span>密码</span>
+                    <input type="password" name="pwd"/>
+                    <div class="vali_info"><i class="border"></i>6-16个字符，字母区分大小写</div>
+                    <p class="vali_info"><i></i>登录密码是必填项</p>
+                    <b class="seesee">偷窥</b>
+                </li>
+                <li>
+                    <span>确定密码</span>
+                    <input type="password" name="confirmPwd"/>
+                    <div class="vali_info"><i class="border"></i>请重复输入一次相同的登录密码</div>
+                    <p class="vali_info"><i></i>确认密码是必填项</p>
+                    <b class="seesee">偷窥</b>
+                </li>
+                <li>
+                    <span>验证码</span>
+                    <input type="text" name="veriCode" class="veryText"/>
+                    <div class="vali_info"><i class="border"></i>验证码不区分大小写</div>
+                    <p class="vali_info"><i></i>验证码是必须的</p>
+                    <canvas id="c1" width="120" height="60"></canvas>&nbsp;&nbsp;
+                    <a href="#" id="cButton">看不清楚？换一张</a>
+                </li>
+                <li>
+                    <span>真实姓名</span>
+                    <input type="text" name="realName"/>
+                    <div class="vali_info"><i class="border"></i>请输入真实姓名</div>
+                    <p class="vali_info"><i></i>姓名是必填项</p>
+                </li>
+                <li>
+                    <span>身份证号码</span>
+                    <input type="text" name="idCard"/>
+                    <div class="vali_info"><i class="border"></i>请输入身份证号码</div>
+                    <p class="vali_info"><i></i>身份证号是必填项</p>
+                </li>
+                <li>
+                    <span></span>
+                    <input type="checkbox" name="check" checked class="checkbox" id="readDetail"/>
+                    <label for="readDetail">我已阅读并接受</label><a href="#" class="blue">"太平洋网络服务条款"</a>
+                </li>
+                <li>
+                    <span></span>
+                    <input type="button" value="注 册"/>
+                </li>
+            </ul>
+        </form>
+        <!--右侧其他登录方式-->
+        <ul id="otherMethod" >
+            <li class="bold"> 手机快速注册</li>
+            <li>编辑短信 <b class="orange">6-16数字、字母</b> 作为密码</li>
+            <li>发送到 <b class="orange">106901330166</b> 即可注册成功</li>
+            <li class="line"></li>
+            <li>其他账号登录：</li>
+            <li class="logIn">
+                <p><i class="logIn-QQ"></i> QQ登录 </p>
+                <p><i class="logIn-weChat"></i> 微博登录</p>
+            </li>
+            <li class="line"></li>
+            <li>已有通行证账号，<a href="#" class="blue">直接登录</a></li>
+        </ul>
+    </section>
+    <!--底部-->
+    <footer id="footer">
+        <ul id="other-link">
+            <li><a href="#" class="black">网站介绍</a> &nbsp;&nbsp;|&nbsp;&nbsp; </li>
+            <li><a href="#" class="black">隐私政策</a> &nbsp;&nbsp;|&nbsp;&nbsp; </li>
+            <li><a href="#" class="black">广告服务</a> &nbsp;&nbsp;|&nbsp;&nbsp; </li>
+            <li><a href="#" class="black">合作媒体</a> &nbsp;&nbsp;|&nbsp;&nbsp; </li>
+            <li><a href="#" class="black">投稿指南</a> &nbsp;&nbsp;|&nbsp;&nbsp; </li>
+            <li><a href="#" class="black">使用条款</a> &nbsp;&nbsp;|&nbsp;&nbsp; </li>
+            <li><a href="#" class="black">联系我们</a> &nbsp;&nbsp;|&nbsp;&nbsp; </li>
+            <li><a href="#" class="black">网站地图</a></li>
+        </ul>
+        <div>
+            <a href="index.html">
+                <img src="images/logo.png"/>
+            </a>
+            <ul id="other">
+                <li>未经授权禁止转载、摘编、复制或建立镜像，如有违反，追究法律责任。</li>
+                <li><a href="#" class="black">增值电信业务经营许可证：</a></li>
+                <li>网站备案号：京ICP备16027372号-3</li>
+                <li>举报邮箱：shenhe@ran10.com</li>
+            </ul>
+            <a href="#">
+                <img src="images/ft-zghlwjbzx.png"/>
+            </a>
+        </div>
+    </footer>
+    <script src="js/register-v2.js"></script>
+</body>
+</html>

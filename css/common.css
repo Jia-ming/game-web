@@ -1,0 +1,217 @@
+/*服务器端字体*/
+@font-face{
+    font-family:'FontAwsome';
+    src:url('../fonts/fontawesome-webfont.woff2'),url('../fonts/fontawesome-webfont.woff'),url('../fonts/fontawesome-webfont.eot'),url('../fonts/fontawesome-webfont.ttf'),url('../fonts/fontawesome-webfont.svg');
+}
+@font-face {
+    font-family:'MFDingDing';
+    src:url('../fonts/MFDingDing_Noncommercial-Regular.otf');
+}
+.fa{
+    font-family:'FontAwsome';
+}
+.fa-shopping-cart:before{
+    content:'\f07a';
+}
+.fa-thumbs-down:before{
+    content:'\f165';
+}
+.fa-thumbs-up:before{
+    content:'\f164';
+}
+.ba{
+    font-family: MFDingDing;
+}
+/*通用属性*/
+body{
+	font:14px "microsoft yahei",Arial,Helvetica,sans-serif;
+	color:#333;
+	margin:0;
+	padding:0;
+}
+i,em{
+    font-style:normal;
+}
+a{
+	color:#333;
+	text-decoration:none;
+    cursor:pointer;
+}
+a:hover,a.hover{
+	color:#FF3D3D;
+	text-decoration:underline;
+}
+h1,h2,h3,h4,h5,h6,p,ul,ol,dl,dd{
+	margin:0;
+	padding:0;
+	list-style:none;
+}
+img{
+	vertical-align: bottom;
+}
+.lf{float:left;}
+.rt{float:right;}
+.clear{clear:both;}
+.none{display:none;}
+.block{display:block;}
+/***********************************/
+/*登录通用标签*/
+.listLogin{
+    display:block;
+    padding-left:35px;
+    height:31px;
+    line-height:31px;
+    background:url(../images/navbar.png) no-repeat;
+}
+.permitLogin{
+    border-bottom:1px dashed #ECECEC;
+    background-position:10px -117px;
+}
+.qqLogin{
+    background-position:10px -148px;
+}
+.wechatLogin{
+    background-position:10px -179px;
+}
+/*旋转的实心箭头*/
+.solidArrow{
+    display:block;
+    border:5px solid transparent;
+    transform-origin:center 2px;
+    transition:transform 0.2s linear;
+    border-top-color:#ccc;
+    position:absolute;
+    top:15px;
+    right:2px;
+}
+:hover>.solidArrow{
+    transform:rotate(180deg);
+}
+/*旋转的空心箭头*/
+.hollowArrow{
+    display:inline-block;
+    width:5px;
+    height:3px;
+    margin-bottom:5px;
+    background:url(../images/navbar.png) no-repeat -16px -20px;
+    transition:transform 0.2s linear;
+}
+:hover>.hollowArrow{
+    transform:rotate(180deg);
+}
+/*下拉菜单框上的三角*/
+.triangle{
+    display:block;
+    width:13px;
+    height:7px;
+    background:url(../images/navbar.png) no-repeat -8px -32px;
+    position:absolute;
+    top:30px;
+    left:50%;
+    z-index:100;
+}
+
+/*滑动广告上的左右三角*/
+.previous,.next{
+    width:30px;
+    height:58px;
+    cursor:pointer;
+    background-color:rgba(0,0,0,0.3);
+    z-index: 1000;
+}
+.previous{
+    position: absolute;
+    top:40%;
+    left:-30px;
+    transition:left 0.5s,background-color 0.5s;
+}
+.next{
+    position: absolute;
+    top:40%;
+    right:-30px;
+    transition:right 0.5s,background-color 0.5s;
+}
+:hover>.previous{
+    position: absolute;
+    top: 40%;
+    left: 0;
+    z-index: 1000;
+
+}
+:hover>.next{
+    position: absolute;
+    top: 40%;
+    right: 0;
+    z-index: 1000;
+}
+:hover>.previous:hover,:hover>.next:hover{
+    background-color:rgba(0,0,0,0.7);
+}
+.previous>i,.next>i{
+    display:block;
+    width:20px;
+    height:38px;
+    margin:10px 5px;
+}
+.previous>i{
+    background:url(../images/bg2.png) no-repeat 0 0;
+}
+.next>i{
+    background:url(../images/bg2.png) no-repeat -20px 0;
+}
+
+/*导航条公用样式 ul.tabBar  引用此项需要定义：ul.tabBar的长度，高度*/
+.tabBar{
+    display:flex;
+    border-left:1px solid #E5E5E5;
+    box-sizing: border-box;
+}
+.tabBar>li{
+    flex-grow:1;
+    display:flex;
+    border-bottom:1px solid #E5E5E5;
+    margin-bottom:-1px;
+}
+.tabBar>li>a{
+    width:100%;
+    padding-top:10px;
+    text-align: center;
+    background-color:#F4F4F4;
+    border-top:1px solid #E5E5E5;
+    border-right:1px solid #E5E5E5;
+}
+.tabBar>li.active>a{
+    border-top:2px solid #FF3D3D;
+    border-bottom:none;
+    margin-bottom:-1px;
+    background-color:#fff;
+}
+/*************模态框*************/
+.modal{
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background:rgba(0,0,0,.3);
+    z-index:2000;
+}
+.modal-dialog{
+    background:#fff;
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    margin:auto;
+}
+.buttonGreen{
+    display:inline-block;
+    background-color: #4da1aa;
+    color: #ecff5d;
+    padding:5px 10px;
+    border-radius:5px;
+    margin:10px 15px;
+    cursor:pointer;
+    border:none;
+}

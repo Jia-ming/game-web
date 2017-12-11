@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>太平洋游戏网-404页面</title>
+    <link rel="stylesheet" href="css/common.css"/>
+    <link rel="stylesheet" href="css/game-404.css"/>
+    <link rel="stylesheet" href="css/footer.css"/>
+</head>
+<body>
+    <!--1.页面主体-->
+    <section id="main">
+        <!--1.头部-->
+        <div class="top">
+            <p>
+                <a href="index.html"><img src="images/logo.png" alt=""></a>
+            </p>
+            <span>太平洋网络 : 电脑网 汽车网 游戏网 时尚网 亲子网 家居网</span>
+        </div>
+        <!--2.主体内容-->
+        <div class="main-box">
+            <p class="lf">
+                <img src="images/surprise.png">
+            </p>
+            <div class="textBox lf">
+                <h1>很抱歉，您浏览的页面暂时不能访问哦！</h1>
+                <p>
+                    <b>5</b>
+                    <span>秒后将自动跳转到</span>
+                    <a href="index.html">太平洋游戏网</a>
+                </p>
+                <ul>
+                    <li>您也可以：</li>
+                    <li>1、直接访问 <a href="index.html">太平洋游戏网首页</a></li>
+                    <li>2、去其他地方逛逛 <a href="#">游戏大厅</a> | <a href="#">游戏下载</a> | <a href="#">论坛社区</a> | <a href="#">游戏图库</a> |
+                        <a href="#">更多&gt;&gt;</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <!--2.页面底部-->
+    <footer id="footer"></footer>
+    <script src="js/jquery-1.11.3.js"></script>
+    <script>
+        $("#footer").load("footer.html");
+//        5秒倒计时
+        function task(){
+            var $b=$(".textBox b");
+            console.log($b);
+            var n=$b.html();
+            n--;
+            if(n==0){
+                window.location.href="index.html";
+            }else{
+                $b.html(`${n}`);
+            }
+        }
+        var timer=setInterval(task,1000);
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+/***1、布局***/
+#footer{
+    /*宽度，元素水平居中对齐*/
+    width:1260px;
+    margin:0 auto;
+}
+/*2.footer*/
+#footer{
+    border-top:1px solid #E6E6E6;
+    padding-top:30px;
+    margin-top:40px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+#footer>p:first-child{
+    padding:10px;
+    background-color:#fff;
+}
+#footer>p:first-child>img{
+    width:120px;
+}
+#footer>div{
+    margin:0 30px;
+}
+#footer>div>p>a{
+    color:#1c1c1c;
+}
+#footer>div>p>a:hover{
+    color:#f60;
+}
+#footer>div>ul{
+    margin:20px 30px;
+}
+#footer>div>ul>li{
+    margin-bottom:10px;
+}

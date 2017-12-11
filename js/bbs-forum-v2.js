@@ -1,0 +1,97 @@
+//热帖轮播
+$(()=>{
+    var $imgs=$("#imgs"),
+        $indexes=$("#indexes"),
+        $previous=$(".previous"),
+        $next=$(".next"),
+        moved=0,
+        canMove=true,
+        timer=null;
+    const LIWIDTH=350,
+          INTERVAL=1000,
+          WAIT=3000;
+    function move(){
+        if(canMove){
+            timer=setTimeout(()=>{
+                moved++;
+                $imgs.stop(true).animate({left:-LIWIDTH*moved},INTERVAL,()=>{
+                    if(moved<6){
+                        $indexes.children(`:eq(${moved})`).addClass("slideActive").siblings().removeClass("slideActive");
+                    }else{
+                        moved=0;
+                        $indexes.children(":first").addClass("slideActive").siblings().removeClass("slideActive");
+                        $imgs.css("left",0);
+                    }
+                    move();
+                });
+            },WAIT)
+        }
+    }
+    move();
+    $("#slider").hover(
+        ()=>{
+            clearTimeout(timer);
+            timer=null;
+            canMove=false;
+        },
+        ()=>{
+            canMove=true;
+            move();
+        });
+    $indexes.on("mouseover","li",e=>{
+        var $li=$(e.target);
+        $li.addClass("slideActive").siblings().removeClass("slideActive");
+        moved=$li.index();
+        $imgs.stop(true).animate({left:-LIWIDTH*moved},INTERVAL)
+    });
+    //为左右箭头绑定事件
+    $previous.click(()=>{
+        moved--;
+        $imgs.animate({left:-LIWIDTH*moved},INTERVAL,()=>{
+            if(moved>0){
+                $indexes.children(`:eq(${moved})`).addClass("slideActive").siblings().removeClass("slideActive");
+            }else{
+                moved=6;
+                $indexes.children(":first").addClass("slideActive").siblings().removeClass("slideActive");
+                $imgs.css("left",0);
+            }
+        });
+    });
+    $next.click(()=>{
+        moved++;
+        $imgs.animate({left:-LIWIDTH*moved},INTERVAL,()=>{
+            if(moved<6){
+                $indexes.children(`:eq(${moved})`).addClass("slideActive").siblings().removeClass("slideActive");
+            }else{
+                moved=0;
+                $indexes.children(":first").addClass("slideActive").siblings().removeClass("slideActive");
+                $imgs.css("left",0);
+            }
+        });
+    })
+});
+//往上走的文字
+$(()=>{
+    let $st=$("#sliderTop");
+    const STEP=26,INTERVAL=500,WAIT=2000;
+    let moved=0,timer=null;
+    function move(){
+        timer=setInterval(function(){
+            moved++;
+            $st.animate({top:-STEP*moved},INTERVAL,()=>{
+                    if(moved>1){
+                        moved=0;
+                        $st.css("top",0);
+                    }
+                }
+            );
+        },WAIT);
+    }
+    move();
+    $st.hover(()=>{
+        clearInterval(timer);
+        timer=null;
+    },()=>{
+        move();
+    })
+});

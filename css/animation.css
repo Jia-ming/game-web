@@ -1,0 +1,42 @@
+@keyframes barFlex1{
+    0%{    }
+    100%{
+        width:22px;
+    }
+}
+
+@keyframes barFlex2{
+    0%{    }
+    100%{
+        width:12px;
+    }
+}
+
+@keyframes gamebar {
+    0%{}
+    25%{transform:rotatez(15deg);}
+    75%{transform:rotatez(-15deg);}
+    100%{}
+}
+
+@keyframes gift-1 {
+    10%{}
+    50%{transform:rotatez(30deg)}
+    100%{}
+}
+
+@keyframes gift-2 {
+    10%{}
+    50%{transform:rotatez(-30deg)}
+    100%{}
+}
+
+@keyframes point-1 {
+    0%{visibility: hidden;}
+    50%{visibility:visible;}
+}
+
+@keyframes point-2 {
+    0%{visibility: hidden;}
+    10%{visibility:visible;}
+}
